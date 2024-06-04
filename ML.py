@@ -24,14 +24,14 @@ import pycountry
 
 # Spécifiez les chemins absolus pour chaque modèle
 model_paths = {
-'KNeighborsRegressor': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\KNeighborsRegressor_pipeline.pkl",
-    'Polynomial Regression': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\Polynomial_Regression_pipeline.pkl",
-    'ElasticNet': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\ElasticNet_pipeline.pkl",
-    'BaggingRegressor': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\BaggingRegressor_pipeline.pkl",
-    'RandomForestRegressor': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\RandomForestRegressor_pipeline.pkl",
-    'GradientBoostingRegressor': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\GradientBoostingRegressor_pipeline.pkl",
-    'AdaBoostRegressor': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\AdaBoostRegressor_pipeline.pkl",
-    'SVR': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\SVR_pipeline.pkl"
+'KNeighborsRegressor': "KNeighborsRegressor_pipeline.pkl",
+    'Polynomial Regression': "Polynomial_Regression_pipeline.pkl",
+    'ElasticNet': "BaggingRegressor_pipeline.pkl",
+    'BaggingRegressor': "BaggingRegressor_pipeline.pkl",
+    'RandomForestRegressor': "RandomForestRegressor_pipeline.pkl",
+    'GradientBoostingRegressor': "GradientBoostingRegressor_pipeline.pkl",
+    'AdaBoostRegressor':"AdaBoostRegressor_pipeline.pkl",
+    'SVR': "SVR_pipeline.pkl"
 }
 
 # Chargement des modèles
@@ -39,7 +39,7 @@ models = {name: joblib.load(path) for name, path in model_paths.items()}
 
 # Chargement des données
 df = pd.read_csv(
-    r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Data\salaries_cleaned.csv")
+    "salaries_cleaned.csv")
 
 y = np.log1p(df['salary_in_usd'])
 X = df.drop(["salary_in_usd", 'salary'], axis=1)
