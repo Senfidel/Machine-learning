@@ -1,6 +1,6 @@
 #Librairies de base
-import pandas as pd
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
@@ -21,10 +21,6 @@ import joblib
 import os
 #Librairie de géocodage
 import pycountry
-
-
-
-
 
 # Spécifiez les chemins absolus pour chaque modèle
 model_paths = {
