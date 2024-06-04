@@ -1,10 +1,13 @@
-import streamlit as st
+#Librairies de base
 import pandas as pd
-import joblib
 import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+#Librairies pour le machine learning
 from sklearn.metrics import mean_squared_error
-from sklearn.model_selection import train_test_split, learning_curve, cross_val_score
-from sklearn.pipeline import Pipeline
+from sklearn.model_selection import train_test_split, learning_curve, cross_val_score, train_test_split, GridSearchCV
+from sklearn.pipeline import Pipeline,  make_pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.neighbors import KNeighborsRegressor
@@ -12,9 +15,12 @@ from sklearn.linear_model import LinearRegression, ElasticNet
 from sklearn.ensemble import BaggingRegressor, RandomForestRegressor, GradientBoostingRegressor, AdaBoostRegressor
 from sklearn.svm import SVR
 from sklearn.preprocessing import PolynomialFeatures
-import plotly.express as px
+#Librairies pour le déploiement
+import streamlit as st
+import joblib
 import os
-
+#Librairie de géocodage
+import pycountry
 
 
 
