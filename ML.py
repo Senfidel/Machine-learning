@@ -52,7 +52,7 @@ st.set_page_config(page_title='Vitrine des Modèles', layout='wide', initial_sid
 
 # Barre latérale pour la navigation entre les pages
 st.sidebar.title("Navigation")
-st.image( "C:/Users/etien/OneDrive/Documents/Master 2/D2SN/Machine learning/Machine learning2/Exam Machine learning/Data/th.jpeg")
+st.image( "th.jpeg")
 pages = ["Contexte du Projet", "Vitrine des Modèles", "Prédictions avec SVR"]
 page = st.sidebar.selectbox("Sélectionnez une Page:", pages)
 if page == "Contexte du Projet":
