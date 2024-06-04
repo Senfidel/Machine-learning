@@ -1,0 +1,9 @@
+pycountry
+matplotlib
+numpy
+pandas
+seaborn
+plotly
+scikit-learn
+streamlit
+joblib
