@@ -1,6 +1,4 @@
 #Librairies de base
-
-import pycountry
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -22,7 +20,7 @@ import streamlit as st
 import joblib
 import os
 #Librairie de géocodage
-
+import pycountry
 
 # Spécifiez les chemins absolus pour chaque modèle
 model_paths = {
