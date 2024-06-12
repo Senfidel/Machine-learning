@@ -1,7 +1,7 @@
 #Librairies de base
-import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 #Librairies pour le machine learning
@@ -22,16 +22,20 @@ import os
 #Librairie de géocodage
 import pycountry
 
+
+
+
+
 # Spécifiez les chemins absolus pour chaque modèle
 model_paths = {
-'KNeighborsRegressor': "KNeighborsRegressor_pipeline.pkl",
-    'Polynomial Regression': "Polynomial_Regression_pipeline.pkl",
-    'ElasticNet': "BaggingRegressor_pipeline.pkl",
-    'BaggingRegressor': "BaggingRegressor_pipeline.pkl",
-    'RandomForestRegressor': "RandomForestRegressor_pipeline.pkl",
-    'GradientBoostingRegressor': "GradientBoostingRegressor_pipeline.pkl",
-    'AdaBoostRegressor':"AdaBoostRegressor_pipeline.pkl",
-    'SVR': "SVR_pipeline.pkl"
+'KNeighborsRegressor': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\KNeighborsRegressor_pipeline.pkl",
+    'Polynomial Regression': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\Polynomial_Regression_pipeline.pkl",
+    'ElasticNet': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\ElasticNet_pipeline.pkl",
+    'BaggingRegressor': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\BaggingRegressor_pipeline.pkl",
+    'RandomForestRegressor': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\RandomForestRegressor_pipeline.pkl",
+    'GradientBoostingRegressor': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\GradientBoostingRegressor_pipeline.pkl",
+    'AdaBoostRegressor': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\AdaBoostRegressor_pipeline.pkl",
+    'SVR': r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Notbooks\SVR_pipeline.pkl"
 }
 
 # Chargement des modèles
@@ -39,7 +43,7 @@ models = {name: joblib.load(path) for name, path in model_paths.items()}
 
 # Chargement des données
 df = pd.read_csv(
-    "salaries_cleaned.csv")
+    r"C:\Users\etien\OneDrive\Documents\Master 2\D2SN\Machine learning\Machine learning2\Exam Machine learning\Data\salaries_cleaned.csv")
 
 y = np.log1p(df['salary_in_usd'])
 X = df.drop(["salary_in_usd", 'salary'], axis=1)
@@ -52,40 +56,44 @@ st.set_page_config(page_title='Vitrine des Modèles', layout='wide', initial_sid
 
 # Barre latérale pour la navigation entre les pages
 st.sidebar.title("Navigation")
-st.image( "th.jpeg")
+st.image( "C:/Users/etien/OneDrive/Documents/Master 2/D2SN/Machine learning/Machine learning2/Exam Machine learning/Data/th.jpeg")
 pages = ["Contexte du Projet", "Vitrine des Modèles", "Prédictions avec SVR"]
 page = st.sidebar.selectbox("Sélectionnez une Page:", pages)
+
 if page == "Contexte du Projet":
     st.title("Contexte du Projet")
     st.markdown("""
     #### Objectif du projet
-    Le but de ce projet est de produire une application à partir d'un modèle de machine learning qui prédit le salaire des data scientists en fonction de leurs caractéristiques. Il s'agit bien d'un problème de régression.
+
+    Le but de ce projet est de produire une application à partir d'un modèle de machine learning qui prédit le salaire des data scientists en fonction de leurs caractéristiques. Il s'agit d'un problème de régression.
 
     #### Les étapes du projet
-    1. **Collecte et récupération des données :**
-        Selon [CHALONS, G., 2022](https://kaizen-solutions.net/kaizen-insights/articles-et-conseils-de-nos-experts/cycle-de-vie-projet-machine-learning-8-etapes/), "Les projets de Machine Learning sont des processus longs, du fait qu'ils nécessitent notamment de collecter une grande quantité de données afin d'apporter une réponse robuste, fiable et stable." Mais nous n'avons pas eu à faire ce travail puisque nous utilisons des données propres qui sont disponibles sur Kaggle. Vous pouvez accéder au dataset et à sa description à partir de ce [lien](https://www.kaggle.com/datasets/abhinavshaw09/data-science-job-salaries-2024).
 
-    2. **Exploration et Visualisation des données :**
-        Cette étape ainsi que la suivante nous ont permis de mieux comprendre l'environnement étudié, d'éviter un certain nombre de biais et de fournir des données de qualité aux algorithmes de Machine Learning choisis. Cette étape m'a permis de bien visualiser la distribution du salaire, et d'identifier les doublons et l'asymétrie de la distribution du salaire. Elle m'a aussi permis de voir qu'il n'y avait pas de valeurs manquantes dans le jeu de données.
+    1. **Collecte et récupération des données**
 
-    3. **Préparation des données :**
-        Comme tout projet informatique, la qualité des données entrantes impacte fortement les données sortantes : "Garbage In, Garbage Out". Nous avons supprimé les doublons et corrigé les asymétries identifiées (voir le notebook) durant l'étape précédente. Nous avons aussi enrichi les données en convertissant les codes de pays en noms complets grâce à la librairie pycountry et recodé bien d'autres variables pour améliorer leur lisibilité par l'utilisateur.
+        Selon [**CHALONS, G., 2022**](https://kaizen-solutions.net/kaizen-insights/articles-et-conseils-de-nos-experts/cycle-de-vie-projet-machine-learning-8-etapes/), "Les projets de Machine Learning sont des processus longs, du fait qu'ils nécessitent notamment de collecter une grande quantité de données afin d'apporter une réponse robuste, fiable et stable." Cependant, nous n'avons pas eu à effectuer cette tâche, car nous utilisons des données propres disponibles sur Kaggle. Vous pouvez accéder au dataset et à sa description via ce [**lien**](https://www.kaggle.com/datasets/abhinavshaw09/data-science-job-salaries-2024).
+
+    2. **Exploration et Visualisation des données**
+
+        Cette étape, ainsi que la suivante, nous a permis de mieux comprendre l'environnement étudié, d'éviter certains biais et de fournir des données de qualité aux algorithmes de machine learning choisis. Elle m'a permis de bien visualiser la distribution des salaires, d'identifier les doublons et les asymétries de la distribution des salaires. Elle m'a aussi montré qu'il n'y avait pas de valeurs manquantes dans le jeu de données.
+
+    3. **Préparation des données**
+
+        Comme dans tout projet informatique, la qualité des données entrantes impacte fortement les résultats : "Garbage In, Garbage Out". Nous avons supprimé les doublons et corrigé les asymétries identifiées (voir le notebook) durant l'étape précédente. Nous avons également enrichi les données en convertissant les codes des pays en noms complets grâce à la librairie pycountry et recodé plusieurs autres variables pour améliorer leur lisibilité par l'utilisateur.
 
     4. **Choix et implémentation des modèles**
-        Nous avons testé plusieurs algorithmes de régression : k-NN Regression, Polynomial Regression, ElasticNet, BaggingRegressor, RandomForestRegressor, GradientBoostingRegressor, AdaBoostRegressor et le SVR dont nous avons comparé les capacités de généralisation. Notre choix de ces modèles est en partie motivé par notre volonté de mise en pratique. D'ailleurs, c'est le défaut d'application des algorithmes de régression qui nous a poussés à travailler sur cette problématique de régression.
 
-    5. **Entraînement des modèles :**
-        Afin d'éviter d'introduire des biais statistiques, nous avons divisé les jeux de données en 2 parties. La première consiste à entraîner les modèles ("training set" 80% des données), la deuxième à les tester ("test set" 20% des données). Nous avons effectué cette séparation de façon aléatoire et reproductible. Pour optimiser les hyperparamètres, nous avons choisi des grilles de recherche plus ou moins simples en fonction du temps d'apprentissage des algorithmes utilisés puisqu'il fallait optimiser le temps d'apprentissage aussi. En effet, les algorithmes à entraîner sont relativement nombreux alors que cette phase du projet est très gourmande en ressources de calcul (CPU, GPU) et en temps.
+        Nous avons testé plusieurs algorithmes de régression : **k-NN Regression, Polynomial Regression, ElasticNet, BaggingRegressor, RandomForestRegressor, GradientBoostingRegressor, AdaBoostRegressor** et **SVR**, en comparant leurs capacités de généralisation. Notre choix de ces modèles est en partie motivé par notre volonté de mise en pratique et de compréhension d'un grand nombre d'algorithmes de machine learning.
 
-    6. **Évaluation et Validation des modèles :**
-        Après l'implémentation et l'entraînement des modèles sur le "training set", nous avons sélectionné les combinaisons des hyperparamètres qui se trompaient le moins dans la prédiction des données test. C'est-à-dire les hyperparamètres dont la combinaison minimisait le plus le MSE de chaque algorithme.
+    5. **Entraînement, évaluation et validation des modèles**
 
-    7. **Comparaison des modèles et choix du modèle le plus robuste pour notre application: **
-        Après l'optimisation des hyperparamètres, nous avons comparé la capacité des algorithmes à prédire les données test et sélectionné celui qui avait le MSE le plus faible. C'est ce modèle que nous avons déployé en production.
+        Afin d'éviter d'introduire des biais statistiques menant généralement à un sous-apprentissage ou à un surapprentissage des modèles, nous avons divisé le jeu de données en deux parties. La première partie (80 % des données) a servi à entraîner les modèles, tandis que la deuxième partie (20 % des données) a été utilisée pour les tester. Nous avons effectué cette séparation de manière aléatoire et reproductible. Pour optimiser les hyperparamètres, nous avons choisi des grilles de recherche plus ou moins simples en fonction du temps d'apprentissage des algorithmes utilisés, afin d'optimiser le temps d'apprentissage. En effet, les algorithmes à entraîner étaient relativement nombreux et cette phase du projet est très gourmande en ressources de calcul (CPU, GPU) et en temps. Nous avons dû interrompre l'optimisation des hyperparamètres lors du premier essai car l'ordinateur avait tourné pendant plus de 24 heures sans épuiser les combinaisons possibles des grilles que nous lui avions soumises. Après avoir trouvé les grilles optimales, nous avons sélectionné les combinaisons d'hyperparamètres qui minimisaient le plus le MSE (Mean Squared Error) de chaque algorithme. Après l'optimisation des hyperparamètres, nous avons comparé la capacité des algorithmes à prédire les données test et sélectionné celui qui avait le MSE le plus faible. C'est ce modèle (le modèle SVR) que nous avons déployé en production.
 
-    8. **Déploiement du modèle: **
-        Nous avons créé une application Streamlit dans laquelle nous avons encapsulé les différents modèles. Dans la première page de l'application, nous présentons le contexte du projet (description sommaire et quelques visualisations). Dans la seconde page, nous présentons des prédictions des algorithmes sur un échantillon des données test.
+    6. **Déploiement du modèle**
+
+        Nous avons créé une application Streamlit dans laquelle nous avons encapsulé les différents modèles. Dans la première page de l'application, nous présentons le contexte du projet (description sommaire et quelques visualisations). Dans la deuxième page, nous présentons des prédictions des algorithmes sur un échantillon des données test. La dernière page est réservée à l'utilisation du modèle SVR pour la prédiction des salaires.
     """)
+
 
     st.write("### Exploration des données")
     st.dataframe(df.head())
