@@ -56,7 +56,7 @@ st.set_page_config(page_title='Vitrine des Modèles', layout='wide', initial_sid
 
 # Barre latérale pour la navigation entre les pages
 st.sidebar.title("Navigation")
-st.write("### **Etienne SENE**")
+st.write("### **Etienne SENE M2 D2SN**")
 st.image( "th.jpeg")
 pages = ["Contexte du Projet", "Vitrine des Modèles", "Prédictions avec SVR"]
 page = st.sidebar.selectbox("Sélectionnez une Page:", pages)
