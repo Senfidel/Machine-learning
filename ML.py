@@ -51,8 +51,6 @@ X = df.drop(["salary_in_usd", 'salary'], axis=1)
 # Division des données en ensembles d'entraînement et de test
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-st.write("### **Etienne SENE**")
-
 # Configuration de l'application Streamlit
 st.set_page_config(page_title='Vitrine des Modèles', layout='wide', initial_sidebar_state='expanded')
 
