@@ -73,13 +73,14 @@ if page == "Contexte du Projet":
 
         Selon [**CHALONS, G., 2022**](https://kaizen-solutions.net/kaizen-insights/articles-et-conseils-de-nos-experts/cycle-de-vie-projet-machine-learning-8-etapes/), "Les projets de Machine Learning sont des processus longs, du fait qu'ils nécessitent notamment de collecter une grande quantité de données afin d'apporter une réponse robuste, fiable et stable." Cependant, nous n'avons pas eu à effectuer cette tâche, car nous utilisons des données propres disponibles sur Kaggle. Vous pouvez accéder au dataset et à sa description via ce [**lien**](https://www.kaggle.com/datasets/abhinavshaw09/data-science-job-salaries-2024).
 
+
     2. **Exploration et Visualisation des données**
 
         Cette étape, ainsi que la suivante, nous a permis de mieux comprendre l'environnement étudié, d'éviter certains biais et de fournir des données de qualité aux algorithmes de machine learning choisis. Elle m'a permis de bien visualiser la distribution des salaires, d'identifier les doublons et les asymétries de la distribution des salaires. Elle m'a aussi montré qu'il n'y avait pas de valeurs manquantes dans le jeu de données.
 
     3. **Préparation des données**
 
-        Comme dans tout projet informatique, la qualité des données entrantes impacte fortement les résultats : "Garbage In, Garbage Out". Nous avons supprimé les doublons et corrigé les asymétries identifiées (voir le notebook) durant l'étape précédente. Nous avons également enrichi les données en convertissant les codes des pays en noms complets grâce à la librairie pycountry et recodé plusieurs autres variables pour améliorer leur lisibilité par l'utilisateur.
+        Comme dans tout projet informatique, la qualité des données entrantes impacte fortement les résultats : "Garbage In, Garbage Out". Nous avons supprimé les doublons et corrigé les asymétries identifiées ([voir le notebook ](https://github.com/Senfidel/Machine-learning/blob/main/Script.ipynb)) durant l'étape précédente. Nous avons également enrichi les données en convertissant les codes des pays en noms complets grâce à la librairie pycountry et recodé plusieurs autres variables pour améliorer leur lisibilité par l'utilisateur.
 
     4. **Choix et implémentation des modèles**
 
