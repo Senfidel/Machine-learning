@@ -108,7 +108,7 @@ if page == "Contexte du Projet":
     st.plotly_chart(fig1)
 
 
-     fig20 = px.box(df, y='log_salary', template="seaborn", title="Salary (log) Distribution")
+     fig20 = px.box(df, y='log_salary', template="seaborn", title="Log_Salary Distribution")
     st.plotly_chart(fig20)
 
 
