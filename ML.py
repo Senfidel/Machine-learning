@@ -105,7 +105,7 @@ if page == "Contexte du Projet":
 
     df['log_salary'] = np.log1p(df['salary_in_usd'])
     fig1 = px.box(df, y='salary_in_usd', template="seaborn", title="Salary Distribution")
-    #st.plotly_chart(fig1)
+    st.plotly_chart(fig1)
 
     fig2 = px.scatter(df, x='job_title', y='log_salary', template="seaborn", title="Job Title vs. Log Salary")
     st.plotly_chart(fig2)
@@ -132,9 +132,9 @@ if page == "Contexte du Projet":
     fig5.update_traces(textfont_size=8)
     st.plotly_chart(fig5)
 
-    fig6 = px.histogram(df, x='log_salary', marginal='rug', template='seaborn',
-                         labels={'log_salary': 'Salary in USD'}, title='<b>Salary Distribution</b>')
-    st.plotly_chart(fig6)
+    #fig6 = px.histogram(df, x='log_salary', marginal='rug', template='seaborn',
+                         #labels={'log_salary': 'Salary in USD'}, title='<b>Salary Distribution</b>')
+    #st.plotly_chart(fig6)
 
     fig7 = px.violin(df, x='work_year', y='log_salary', color='work_year',
                       labels={'work_year': 'Year', 'log_salary': 'Log Salary'}, template='seaborn',
