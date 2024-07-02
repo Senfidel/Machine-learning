@@ -105,7 +105,7 @@ if page == "Contexte du Projet":
 
     df['log_salary'] = np.log1p(df['salary_in_usd'])
     fig1 = px.box(df, y='salary_in_usd', template="seaborn", title="Salary Distribution")
-    st.plotly_chart(fig1)
+    #st.plotly_chart(fig1)
 
     fig2 = px.scatter(df, x='job_title', y='log_salary', template="seaborn", title="Job Title vs. Log Salary")
     st.plotly_chart(fig2)
