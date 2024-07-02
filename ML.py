@@ -94,7 +94,7 @@ if page == "Contexte du Projet":
 
     6. **Déploiement du modèle**
 
-        Nous avons créé une application Streamlit dans laquelle nous avons encapsulé les différents modèles. Dans la première page de l'application, nous présentons le contexte du projet (description sommaire et quelques visualisations). Dans la deuxième page, nous présentons des prédictions des algorithmes sur un échantillon des données test. La dernière page est réservée à l'utilisation du modèle SVR pour la prédiction des salaires. Chat GPT mous a été d’une aide précieuse dans ce projet, notamment pour la création du pipeline des modèles.
+        Nous avons créé une application Streamlit dans laquelle nous avons encapsulé les différents modèles entraînés et validés avec la méthode K-Fold. Pour faciliter le déploiement, ces modèles ont été introduits dans des pipelines et enregistrés. Dans la première page de l'application, nous présentons le contexte du projet (description sommaire et quelques visualisations). Dans la deuxième page, nous présentons des prédictions des algorithmes sur un échantillon des données test. La dernière page est réservée à l'utilisation du modèle SVR pour la prédiction des salaires. Chat GPT mous a été d’une aide précieuse dans ce projet, notamment pour la création du pipeline des modèles.
     """)
 
 
